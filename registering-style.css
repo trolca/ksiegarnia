@@ -1,0 +1,58 @@
+body{
+    background-image: url("pictures/ksiegarnia-backround.jpg");
+    background-size: cover;
+}
+
+p{
+    font-family: 'Roboto';
+}
+
+.main-site-div{
+    height: 98vh;
+    width: 30vw;
+    margin-left: 35vw;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.main-site-div #main-menu-button:hover{
+    background-color: #dcdcdc;
+    transform: scale(1.01);
+    transition: 0.15s;
+}
+
+.main-site-div #main-menu-button:active{
+    transition: 0s;
+    background-color: rgb(182, 180, 180);
+}
+
+.main-site-div #main-menu-button{
+    transition: 0.15s;
+    width: 90%;
+    margin-left: 4.7%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    height: 20%;
+    font-family: "Roboto";
+    font-size: 50px;
+    font-weight: 300;
+
+}
+
+#welcome-text{
+    font-size: 50px;
+    font-weight: 600;
+    margin-left: 23%;
+    margin-top: 0px;
+    padding-top: 5%;
+}
+
+#login-text{
+    font-size: 50px;
+    font-weight: 600;
+    margin-left: 33%;
+    margin-top: 0px;
+    padding-top: 5%;
+}
