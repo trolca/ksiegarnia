@@ -12,23 +12,26 @@
 <body>
     <div class="main-site-div">
         <p id="login-text">
-            Zaloguj się:
+            Logowanie:
         </p>
 
         <form method="post" enctype="multipart/form-data" class="login-form">
             
             <div class="input-div">
-                Nazwa użytkownika lub adres email:<br>
+                Nazwa użytkownika / adres email:<br>
                 <input name="username">
+                <p id="error-message"> <?php include 'php-scripts/login-logic.php'; echo $GENERAL_ERROR_MESSAGE; ?> </p>
             </div>
 
             <div class="input-div">
                 Hasło:<br>
-                <input name="username">
+                <input type="password" name="user-password">
+                <p id="error-message"><?php include 'php-scripts/login-logic.php'; echo $GENERAL_ERROR_MESSAGE; ?></p>
             </div>
 
-            <submit> Wyślij</submit>
-
+            <input type="submit" value="Zaloguj się" id="submit-button">
+            
+            <p id="nein-account">Nie masz konta? <a href="main-site.html">Zarejestruj się</a> </p>
         </form>
     </div>
 </body>
