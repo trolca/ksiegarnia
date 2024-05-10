@@ -31,7 +31,7 @@
 
             <input type="submit" value="Zaloguj się" id="submit-button">
             
-            <p id="nein-account">Nie masz konta? <a href="main-site.html">Zarejestruj się</a> </p>
+            <p id="account-text">Nie masz konta? <a href="rejestracja.php">Zarejestruj się</a> </p>
         </form>
     </div>
 </body>

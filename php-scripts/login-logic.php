@@ -1,5 +1,7 @@
 <?php
     //Only vars in uppercase should be accessed in external php files
+    if(session_status() != PHP_SESSION_ACTIVE) 
+        session_start();
 
     $GENERAL_ERROR_MESSAGE = "";
     $connection = mysqli_connect("localhost", "root", "", "ksiegarnia");
@@ -24,10 +26,7 @@
 
     $username = mysqli_fetch_assoc($dataFromDatabase)["username"];
 
-    session_start();
-
     $orders = $connection->execute_query("SELECT id_ksiazki, data_zamowienia FROM zamowienia INNER JOIN klient ON klient.id_klienta = zamowienia.id_klienta WHERE klient.username = ?", [$username]);
     
-    echo $username;
     $_SESSION["user"] = $username;
     $_SESSION["orders"] = mysqli_fetch_all($orders);
