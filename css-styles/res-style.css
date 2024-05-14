@@ -1,0 +1,12 @@
+*{
+    font-family: "Roboto";
+}
+
+.top-div{
+    background-image: url("../pictures/ksiegarnia-backround.jpg");
+    background-size: 100% 100%;
+    margin-left: -0.3%;
+    margin-top: -0.63%;
+    width: 100vw;
+    height: 50vh;
+}

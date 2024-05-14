@@ -1,6 +1,7 @@
 <?php
-    if(session_status() != PHP_SESSION_ACTIVE) 
-        session_start();
+    include 'check-session.php';
+    include 'database-info.php';
+
     $GENERAL_ERROR_MESSAGE = "";
     $USERNAME_ERROR_MESSAGE = "";
     $EMAIL_ERROR_MESSAGE = "";
@@ -11,9 +12,10 @@
     
     if($_SESSION["user"] != null){
         $GENERAL_ERROR_MESSAGE = "Jesteś już zalogowany!";
+        header("Location: main-site.php");
         return;
     }
-    $connection = mysqli_connect("localhost", "root", "", "ksiegarnia");
+    $connection = mysqli_connect($HOST_NAME, $USERNAME, $PASSWORD, $DATABASE_NAME);
     if(!$connection){
         $GENERAL_ERROR_MESSAGE = "Błąd podczas łączenia sie z bazą danych!";
         return;
@@ -63,4 +65,5 @@
 
     $_SESSION["user"] = $username;
     $_SESSION["orders"] = [];
-    header("Location: main-site.html");
+    $_SESSION["user-type"] = "U";
+    header("Location: main-site.php");

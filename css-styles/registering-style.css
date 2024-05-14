@@ -3,7 +3,7 @@
 }
 
 body{
-    background-image: url("pictures/ksiegarnia-backround.jpg");
+    background-image: url("../pictures/ksiegarnia-backround.jpg");
     background-size: cover;
 }
 
@@ -16,18 +16,18 @@ body{
     border-radius: 25px;
 }
 
-.main-site-div #main-menu-button:hover{
+.main-site-div .main-menu-button:hover{
     background-color: #dcdcdc;
     transform: scale(1.01);
     transition: 0.15s;
 }
 
-.main-site-div #main-menu-button:active{
+.main-site-div .main-menu-button:active{
     transition: 0s;
     background-color: rgb(182, 180, 180);
 }
 
-.main-site-div #main-menu-button{
+.main-site-div .main-menu-button{
     transition: 0.15s;
     width: 90%;
     margin-left: 4.7%;
@@ -38,7 +38,44 @@ body{
     height: 20%;
     font-size: 50px;
     font-weight: 300;
+}
 
+.main-site-div .logout-button:hover{
+    background-color: #ce3939;
+    transform: scale(1.01);
+    transition: 0.15s;
+}
+
+.main-site-div .logout-button:active{
+    transition: 0s;
+    background-color: rgb(180, 55, 55);
+}
+
+.main-site-div .logout-button{
+    transition: 0.15s;
+    width: 90%;
+    margin-left: 4.7%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: rgb(240, 83, 83);
+    border-color: #a84949;
+    border-radius: 10px;
+    height: 100%;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.main-site-div .disabled-main-menu-button{
+    width: 90%;
+    margin-left: 4.7%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: rgb(175, 175, 175);
+    border-color: black;
+    border-radius: 10px;
+    height: 20%;
+    font-size: 50px;
+    font-weight: 300;
 }
 
 #welcome-text{
@@ -104,7 +141,7 @@ body{
     text-align: center;
 }
 
-#error-message{
+.error-message{
     margin-top: 0%;
     font-size: 0.7vw;
     font-weight: 400;
