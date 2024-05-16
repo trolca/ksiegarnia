@@ -37,7 +37,7 @@
                 echo '<button class="disabled-main-menu-button">Zobacz zasoby</button>';
             }else if($_SESSION["user-type"] == "A"){
                 generateLogoutButton();
-                echo '<button class="main-menu-button"> Edytuj klientów </button><br>';
+                echo '<a href="edit-clients.php"> <button class="main-menu-button"> Edytuj klientów </button> </a> <br>';
                 echo '<a href="check-resources.php"> <button class="main-menu-button">Zobacz zasoby</button> </a>';
             }else{
                 generateLogoutButton();
