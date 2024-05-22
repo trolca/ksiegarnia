@@ -10,8 +10,7 @@
         return;
     }
     
-    if(isset($_SESSION["user"]) || (isset($_SESSION["user"]) && $_SESSION["user"] == null)){
-        $GENERAL_ERROR_MESSAGE = "Jesteś już zalogowany!";
+    if(isset($_SESSION["user"])){
         header("Location: main-site.php");
         return;
     }
