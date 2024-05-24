@@ -60,9 +60,6 @@
         $GENERAL_ERROR_MESSAGE = "Nie udało się dodać danych do bazy danych";
         return;
     }
-    echo $username;
 
-    $_SESSION["user"] = $username;
-    $_SESSION["orders"] = [];
-    $_SESSION["user-type"] = "U";
+    
     header("Location: main-site.php");
