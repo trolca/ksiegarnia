@@ -2,6 +2,10 @@
     font-family: "Roboto";
 }
 
+a{
+    -webkit-user-drag: none;
+}
+
 .toolbar-button:hover{
     background-color: #dcdcdc;
     transform: scale(1.01);
@@ -158,7 +162,7 @@
 }
 
 .book-div .order-button{
-    margin-left: 3.5%;
+    margin-left: 4%;
     border: solid #9e9e9e 1px;
     width: 90%;
     height: 100%;
@@ -169,8 +173,9 @@
 
 .book-div .cost-book{
     position: absolute;
-    bottom: 28%;
+    bottom: 27%;
+    font-size: 1vw;
     text-align: center;
-    margin-left: 38%;
+    margin-left: 40%;
     margin-bottom: 2.5%;
 }

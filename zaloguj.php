@@ -1,3 +1,7 @@
+<?php
+    include 'php-scripts/login-logic.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +24,13 @@
             <div class="input-div">
                 Nazwa użytkownika / adres email:<br>
                 <input name="username">
-                <p class="error-message"> <?php include 'php-scripts/login-logic.php'; echo $GENERAL_ERROR_MESSAGE; ?> </p>
+                <p class="error-message"> <?php echo $GENERAL_ERROR_MESSAGE; ?> </p>
             </div>
 
             <div class="input-div">
                 Hasło:<br>
                 <input type="password" name="user-password">
-                <p class="error-message"><?php include 'php-scripts/login-logic.php'; echo $GENERAL_ERROR_MESSAGE; ?></p>
+                <p class="error-message"><?php echo $GENERAL_ERROR_MESSAGE; ?></p>
             </div>
 
             <input type="submit" value="Zaloguj się" id="submit-button">

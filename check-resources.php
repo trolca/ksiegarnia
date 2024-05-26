@@ -1,3 +1,13 @@
+<?php
+    include 'php-scripts/check-session.php';
+    if(!isset($_SESSION["user"])){
+        echo "Nie jesteś zalogowany!";
+        header("Location: main-site.php");
+        exit;
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +20,24 @@
     <title>Księgarnia - Książki</title>
 </head>
 <body>
+
     <div id="toolbar">
         <a href="main-site.php" id="back-button"> <button class="toolbar-button" id="back-button-font"> Powrót</button></a>
         <form method="get" id="search-form">
-            <input type="text" name="search-query" placeholder="Wyszukaj ksiązke" autocomplete="off" id="search-text">
+            <input type="text" name="search-query" placeholder="Wyszukaj ksiązke" autocomplete="off" id="search-text" value = <?php 
+                if(!isset($_GET["search-query"])){
+                    echo "\"\"";
+                }else{
+                    $sus = $_GET["search-query"]; 
+                    echo "\"$sus\""; 
+                }
+            ?> >
             <button id="submit-button"> <input type="submit" hidden> </button>
         </form>
-        <a id="add-book"><button class="toolbar-button" id="add-book-font"> Dodaj książke</button> </a>
+        <?php 
+            if($_SESSION["user-type"] == "A")
+                echo '<a id="add-book"><button class="toolbar-button" id="add-book-font"> Dodaj książke</button> </a>';
+        ?>
     </div>
 
     <div id="all-books">
@@ -25,7 +46,8 @@
             include 'php-scripts/database-info.php';
             $connection = mysqli_connect($HOST_NAME, $USERNAME, $PASSWORD, $DATABASE_NAME);
 
-            $allBooks = $connection->execute_query("SELECT * FROM ksiazka");
+            $searchQuery = isset($_GET["search-query"]) ? $_GET["search-query"] : "";
+            $allBooks = $connection->execute_query("SELECT * FROM ksiazka WHERE title LIKE '%$searchQuery%'");
             $numBooks = mysqli_num_rows($allBooks);
 
             for($i = 0; $i < $numBooks; $i++){
@@ -45,10 +67,15 @@
                 "<p class='author-text'>$author</p>".
                 "<p class='release-date'>Wydana: $releaseDate</p>".
                 "<p class='book-description'>Opis: $description</p>".
-                "<p class='cost-book'>Cena: $cost zł</p>".
-                "<form action='book-order.php' class='book-button-form' style='width: 100%; height: 25%; margin-top: 0%;'> <input name='id-ksiazki' value='$idBook' hidden> <input class='toolbar-button order-button' type='submit' value='Zamów'> </form>".
+                "<p class='cost-book'><b> $cost zł </b></p>".
+                "<form action='book-order.php' class='book-button-form' style='width: 100%; height: 25%; margin-top: 0%;'> <input name='id-ksiazki' value='$idBook' hidden> <input class='toolbar-button order-button' type='submit' value='Szczegóły'> </form>".
             "</div>";
             }
+
+            if($numBooks == 0){
+                echo "Nie znaleziono książki";
+            }
+
         ?>
     </div>
 </body>

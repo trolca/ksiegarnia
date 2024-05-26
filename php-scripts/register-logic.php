@@ -29,6 +29,12 @@
     }
 
     $username = trim($_POST["username"]);
+
+    if(str_contains($username, " ")){
+        $USERNAME_ERROR_MESSAGE = "Nie można mieć spacji w nazwie!";
+        return;
+    }
+
     $email = trim($_POST["email"]);
 
     if($username == ""){

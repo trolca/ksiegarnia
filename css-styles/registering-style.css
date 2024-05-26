@@ -2,6 +2,10 @@
     font-family: "Roboto";
 }
 
+a{
+    -webkit-user-drag: none;
+}
+
 body{
     background-image: url("../pictures/ksiegarnia-backround.jpg");
     background-size: cover;
@@ -110,7 +114,7 @@ body{
     margin-top: 2%;
     width: 50%;
     height: 25%;
-    font-size: 65px;
+    font-size: 2.8vw;
     font-weight: 400;
     background-color: whitesmoke;
     border-radius: 15px;

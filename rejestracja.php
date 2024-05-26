@@ -1,3 +1,7 @@
+<?php
+    include 'php-scripts/register-logic.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,25 +21,25 @@
             <div class="input-div">
                 Nazwa użytkownika:<br>
                 <input name="username">
-                <p class="error-message"> <?php include 'php-scripts/register-logic.php'; echo $GENERAL_ERROR_MESSAGE.$USERNAME_ERROR_MESSAGE; ?> </p>
+                <p class="error-message"> <?php echo $GENERAL_ERROR_MESSAGE.$USERNAME_ERROR_MESSAGE; ?> </p>
             </div>
 
             <div class="input-div">
                 Adres email:<br>
                 <input type="email" name="email">
-                <p class="error-message"> <?php include 'php-scripts/register-logic.php'; echo $GENERAL_ERROR_MESSAGE.$EMAIL_ERROR_MESSAGE; ?> </p>
+                <p class="error-message"> <?php echo $GENERAL_ERROR_MESSAGE.$EMAIL_ERROR_MESSAGE; ?> </p>
             </div>
 
             <div class="input-div">
                 Hasło:<br>
                 <input type="password" name="user-password">
-                <p class="error-message"> <?php include 'php-scripts/register-logic.php'; echo $GENERAL_ERROR_MESSAGE.$PASSWORD_ERROR_MESSAGE; ?> </p>
+                <p class="error-message"> <?php echo $GENERAL_ERROR_MESSAGE.$PASSWORD_ERROR_MESSAGE; ?> </p>
             </div>
     
             <div class="input-div">
                 Potwierdź hasło:<br>
                 <input type="password" name="confirm-password">
-                <p class="error-message"> <?php include 'php-scripts/register-logic.php'; echo $GENERAL_ERROR_MESSAGE.$PASSWORD_ERROR_MESSAGE; ?> </p>
+                <p class="error-message"> <?php echo $GENERAL_ERROR_MESSAGE.$PASSWORD_ERROR_MESSAGE; ?> </p>
             </div>
 
             <input type="submit" value="Rejestracja" id="submit-button">
