@@ -10,7 +10,7 @@
         return;
     }
     
-    if(isset($_SESSION["user"])){
+    if(isset($_SESSION["user"]) && !isset($_POST["adding"])){
         header("Location: main-site.php");
         return;
     }
@@ -21,11 +21,13 @@
     }
 
     $password = hash("sha256", $_POST["user-password"]);
-    $confirmPassword = hash("sha256", $_POST["confirm-password"]);
+    if(isset($_POST["confirm-password"])){
+        $confirmPassword = hash("sha256", $_POST["confirm-password"]);
 
-    if($password != $confirmPassword){
-        $PASSWORD_ERROR_MESSAGE = "Hasła nie są takie same!";
-        return;
+        if($password != $confirmPassword){
+            $PASSWORD_ERROR_MESSAGE = "Hasła nie są takie same!";
+            return;
+        }
     }
 
     $username = trim($_POST["username"]);
@@ -67,5 +69,10 @@
         return;
     }
 
-    
-    header("Location: main-site.php");
+    if(isset($_POST["adding"])){
+        header("Location: edit-clients.php");
+        return;
+    }else{
+        header("Location: main-site.php");
+        return;
+    }

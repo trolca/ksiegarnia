@@ -1,35 +1,7 @@
-<?php 
-    if(!isset($_GET["id-ksiazki"])){
-        echo "Problem z załadowaniem książki! Przepraszamy bardzo za problemy prosimy spróbować a jak nie zadziała to wyłączyć i włączyć strone!";
-        header("Location: check-resources.php");
-        return;
-    }
-    include 'php-scripts/check-session.php';
-    include 'php-scripts/database-info.php';
-    $idBook = $_GET["id-ksiazki"];
-
-    $connection = mysqli_connect($HOST_NAME, $USERNAME, $PASSWORD, $DATABASE_NAME);
-    $bookQuery = $connection->execute_query("SELECT * FROM ksiazka WHERE id_ksiazki = ?", [$idBook]);
-    
-    if(mysqli_num_rows($bookQuery) <= 0){
-        echo "Książka o podanym id nie istnieje! <br>";
-        echo '<a href="check-resources.php"> <button >Powrót</button> </a>';
-        return;
-    }
-
-    $bookInfo = mysqli_fetch_assoc($bookQuery);
-
-    $BOOK_TITLE = $bookInfo["title"];
-    $AUTHOR = $bookInfo["author"];
-    $PUBLISHER = $bookInfo["publisher"];
-    $COST = $bookInfo["cost"];
-    $AMOUNT_LEFT = $bookInfo["amount"];
-    $RELEASE_DATE = date("j.m.x", strtotime($bookInfo["release_date"]));
-    $DESCRIPTION = $bookInfo["description"];
-?>
-
 <?php
     include 'php-scripts/order-book-logic.php';
+    include 'php-scripts/get-book-info.php';
+    include 'php-scripts/check-session.php';
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +23,13 @@
             <p id="publisher">Wydawca: <b> <?php echo $PUBLISHER; ?> </b></p>
             <p id="release-date">Data wydania: <b> <?php echo $RELEASE_DATE; ?> </b> </p>
             <p id="description"><?php echo $DESCRIPTION; ?></p>
-            <a href="check-resources.php"> <button id="back-button">Powrót</button> </a>
+            <a href="check-resources.php"> <button class="anim-button" id="back-button">Powrót</button> </a>
+            <?php
+                 if($_SESSION["user-type"] == "A"){
+                    $idBook = $_GET["id-ksiazki"];
+                    echo "<a href='edit-book.php?id-ksiazki=$idBook'> <button class='anim-button' id='edit-button'>Edytuj</button> </a>";
+                 }
+             ?>
         </div>
         <div id="order-details">
             <p id="price">Cena: <b><?php echo $COST; ?> zł </b> </p>

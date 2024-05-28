@@ -14,8 +14,8 @@ body{
 
 .main-site-div{
     height: 98vh;
-    width: 30vw;
-    margin-left: 35vw;
+    width: 40vw;
+    margin-left: 29vw;
     background-color: white;
     border-radius: 25px;
 }
@@ -83,9 +83,9 @@ body{
 }
 
 #welcome-text{
-    font-size: 50px;
+    font-size: 2.1vw;
     font-weight: 600;
-    margin-left: 23%;
+    margin-left: 26%;
     margin-top: 0px;
     padding-top: 5%;
 }
@@ -93,16 +93,16 @@ body{
 #login-text{
     font-size: 2vw;
     font-weight: 600;
-    margin-left: 33%;
+    margin-left: 37%;
     margin-top: 0px;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 
 .input-div{
     margin-left: 0%;
     margin-top: 0%;
-    margin-bottom: 6%;
-    height: 20%;
+    margin-bottom: 5vh;
+    height: 10vh;
     font-weight: 350;
     font-size: 1.8vw;
     text-align: center;
@@ -168,13 +168,13 @@ body{
 #register-text{
     font-size: 2vw;
     font-weight: 600;
-    margin-left: 33%;
+    margin-left: 37%;
     margin-top: 0px;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 
 #clients-div{
-    height: 70%;
+    height: 60%;
     width: 100%;
     overflow: scroll;
     border-radius: 5px;
@@ -197,7 +197,7 @@ body{
     font-weight: 600;
     margin-bottom: 2%;
     margin-right: 25cqw;
-    margin-top: 3cqw;
+    margin-top: 1vh;
 }
 
 .client .email{
@@ -207,7 +207,7 @@ body{
     font-weight: 400;
     font-size: calc(0.4vw + 0.5vh);
     margin-right: 40cqw;
-    margin-top: 6cqw;
+    margin-top: 4vh;
 }
 
 .client .delete-button{
@@ -226,4 +226,55 @@ body{
 .client .delete-button:hover{
     background-color: #ce3939;
     transform: scale(1.009);
+}
+
+.button-clients{
+    transition: 0.15s;
+    background-color: whitesmoke;
+    border: solid gray;
+    border-radius: 15px;
+    font-size: 2.3vw;
+    font-weight: 600;
+}
+
+.button-clients:hover{
+    background-color: #dcdcdc;
+    transform: scale(1.01);
+    transition: 0.15s;
+}
+
+.button-clients:active{
+    transition: 0s;
+    background-color: rgb(182, 180, 180);
+}
+
+#back-button{
+    width: 50%;
+    height: 17vh;
+    margin-left: 0.5%;
+    margin-top: 1%;
+}
+#add-client{
+    width: 47.5%;
+    height: 17vh;
+    margin-left: 0.5%;
+    margin-top: 1%;
+}
+
+#add-user-text{
+    margin-top: 0px;
+    padding-top: 5%;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 600;
+}
+
+#add-user-cancel{
+    width: 50%;
+    height: 13vh;
+    margin-left: 25%;
+    margin-top: 2vh;
+    border-width: 1px;
+    border-color: black;
+    font-weight: 500;
 }
