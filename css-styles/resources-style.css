@@ -113,6 +113,7 @@ a{
 #all-books{
     margin-top: 70px;
     width: 99vw;
+    position: relative;
     top: 0;
     left: 0;
     margin-left: 0px;

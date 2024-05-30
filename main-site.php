@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ksiegarnia - główna strona</title>
+    <meta name="author" content="Szymon Giemza">
+    <meta name="description" content="Jest to strona ksiegarni internetowej zrobiona przez 1 ucznia ZSME.">
+    <meta name="keywords" content="ksiegarnia, library, książka, book, zamówienia">
+    <meta name="program-user-to-create" content="Visual Studio Code">
     <link rel="stylesheet" href="css-styles/registering-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,9 +49,7 @@
             }
         ?>
 
-        <!-- <a href="zaloguj.php"> <button class="main-menu-button">Zaloguj się</button> </a><br>
-        <a href="rejestracja.php"> <button class="main-menu-button">Zarejestruj się</button> </a> <br>
-        <a href="check-resources.php"> <button class="main-menu-button">Zobacz zasoby</button> </a> -->
+        <div id="footer">Szymon Giemza 2024</div>
 
     </div>
 </body>

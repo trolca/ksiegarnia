@@ -278,3 +278,13 @@ body{
     border-color: black;
     font-weight: 500;
 }
+
+#footer{
+    position: absolute;
+    bottom: 1%;
+    margin-top: 2%;
+    width: 40vw;
+    height: 5%;
+    background-color: #dcdcdc;
+    border-radius: 0px 0px 25px 25px;
+}
