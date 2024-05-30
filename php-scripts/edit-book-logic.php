@@ -22,7 +22,6 @@
         $newReleaseDate = $_POST["orginal-release-date"];;
     }else{
         $newReleaseDate = $dateSplit[2]."-".$dateSplit[1]."-".$dateSplit[0];
-        echo $newReleaseDate;
     }
 
     $description = $_POST["description"];

@@ -1,5 +1,10 @@
 <?php
     include 'php-scripts/register-logic.php';
+    include 'php-scripts/check-session.php';
+    if($_SESSION["user-type"] != "A"){
+        echo ":<";
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>

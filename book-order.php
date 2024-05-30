@@ -28,6 +28,7 @@
                  if($_SESSION["user-type"] == "A"){
                     $idBook = $_GET["id-ksiazki"];
                     echo "<a href='edit-book.php?id-ksiazki=$idBook'> <button class='anim-button' id='edit-button'>Edytuj</button> </a>";
+                    echo "<a href='php-scripts/delete-book-logic.php?id-ksiazki=$idBook'> <button class='anim-button' id='delete-button'>Usuń książke</button> </a>";
                  }
              ?>
         </div>

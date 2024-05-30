@@ -36,7 +36,7 @@
         </form>
         <?php 
             if($_SESSION["user-type"] == "A")
-                echo '<a id="add-book"><button class="toolbar-button" id="add-book-font"> Dodaj książke</button> </a>';
+                echo '<a href="add-book.php" id="add-book"><button class="toolbar-button" id="add-book-font"> Dodaj książke</button> </a>';
         ?>
     </div>
 
